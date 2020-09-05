@@ -56,7 +56,7 @@ public struct MLColor: Codable {
 }
 
 extension UIColor {
-    func toMLColor(opacity: CGFloat = 1) -> MLColor {
+    public func toMLColor(opacity: CGFloat = 1) -> MLColor {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
@@ -65,7 +65,7 @@ extension UIColor {
         return MLColor(red: Float(r), green: Float(g), blue: Float(b), alpha: Float(a * opacity))
     }
     
-    func toClearColor() -> MTLClearColor {
+    public func toClearColor() -> MTLClearColor {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0

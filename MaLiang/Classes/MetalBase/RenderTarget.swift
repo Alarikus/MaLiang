@@ -98,7 +98,7 @@ open class RenderTarget {
         return commandBuffer.makeRenderCommandEncoder(descriptor: rpd)
     }
     
-    internal func commitCommands() {
+    public func commitCommands() {
         commandBuffer?.commit()
         commandBuffer = nil
         modified = true
