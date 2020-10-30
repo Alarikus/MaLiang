@@ -9,7 +9,7 @@ import Foundation
 import Metal
 
 /// Printer is a special brush witch can print images to canvas
-public final class Printer: Brush {
+open class Printer: Brush {
     
     /// make shader vertex function from the library made by makeShaderLibrary()
     /// overrides to provide your own vertex function
@@ -28,11 +28,12 @@ public final class Printer: Brush {
         attachment.isBlendingEnabled = true
         
         attachment.rgbBlendOperation = .add
-        attachment.sourceRGBBlendFactor = .one
-        attachment.destinationRGBBlendFactor = .oneMinusSourceAlpha
-        
         attachment.alphaBlendOperation = .add
+
+        attachment.sourceRGBBlendFactor = .sourceAlpha
         attachment.sourceAlphaBlendFactor = .one
+
+        attachment.destinationRGBBlendFactor = .oneMinusSourceAlpha
         attachment.destinationAlphaBlendFactor = .oneMinusSourceAlpha
     }
 
